@@ -1,1 +1,58 @@
 /* Add your own styles */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#controls {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#controls label {
+    margin-right: 10px;
+}
+
+#controls input {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+#controls button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#result table, #result th, #result td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#result th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+#result tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
