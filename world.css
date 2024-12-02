@@ -1,58 +1,81 @@
 /* Add your own styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-#controls {
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-#controls label {
+/* Input and Buttons */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
     margin-right: 10px;
 }
 
-#controls input {
-    flex-grow: 1;
-    padding: 5px;
-}
-
-#controls button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #4CAF50;
     color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#result table {
-    width: 100%;
-    border-collapse: collapse;
+button:hover {
+    background-color: #45a049;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
     margin-top: 20px;
-}
-
-#result table, #result th, #result td {
+    border-collapse: collapse;
     border: 1px solid #ddd;
-    padding: 8px;
 }
 
-#result th {
-    background-color: #f2f2f2;
+table th, table td {
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-#result tr:nth-child(even) {
-    background-color: #f9f9f9;
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Result Container */
+#result {
+    margin-top: 20px;
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox Layout for Buttons */
+button + button {
+    margin-left: 10px;
 }
