@@ -42,9 +42,9 @@ if (isset($_GET['country'])) {
             }
             echo "</table>";
         } elseif (!$countryExists) {
-            echo "Country not found";
+            echo "<p class='error-message'>Country not found</p>";
         } else {
-            echo "No cities found";
+            echo "<p class='error-message'>No cities found</p>";
         }
     } else {
         // SQL query to get countries matching the search
@@ -66,10 +66,10 @@ if (isset($_GET['country'])) {
             }
             echo "</table>";
         } else {
-            echo "Country not found";
+            echo "<p class='error-message'>Country not found</p>";
         }
     }
 } else {
-    echo "Please enter a country name.";
+    echo "<p class='error-message'>Please enter a country name.</p>";
 }
 ?>
