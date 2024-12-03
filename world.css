@@ -1,36 +1,74 @@
 /* Add your own styles */
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 30px;
+    background-image: url('globebackground.png'); /* Add the background image */
+    background-size: cover; /* Ensure the image covers the whole screen */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Make the background fixed while scrolling */
+}
+
+/* Black bar for the 'World Database Lookup' text with icon */
+#world-bar {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark grey with opacity */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    gap: 15px; /* Space between the icon and the text */
 }
 
-h1 {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px;
+#world-bar img {
+    width: 100px; /* Set image size */
+    height: 100px; /* Keep it square */
 }
 
-/* Input and Buttons */
-input[type="text"] {
-    padding: 10px;
-    font-size: 1rem;
+/* Main content container */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls section styling */
+#controls {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    gap: 10px; /* Reduced space between buttons */
+    margin-bottom: 30px;
+    justify-content: center; /* Center the controls */
+}
+
+#controls input[type="search"] {
+    padding: 12px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 350px; /* Limit input width */
+    margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px;
-    margin-right: 10px;
 }
 
-button {
-    padding: 10px 15px;
-    font-size: 1rem;
-    background-color: #4CAF50;
+#controls button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #2dc6ce;
     color: white;
     border: none;
     border-radius: 4px;
@@ -38,44 +76,63 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #45a049;
+#controls button:hover {
+    background-color: #16a8d8;
+}
+
+/* Lookup Cities button - darker blue */
+#lookupCities {
+    background-color: #007bb5; /* Darker blue */
+}
+
+#lookupCities:hover {
+    background-color: #006c94; /* Slightly darker blue for hover */
 }
 
 /* Table Styling */
 table {
-    width: 80%;
-    margin-top: 20px;
+    width: 100%;
     border-collapse: collapse;
-    border: 1px solid #ddd;
+    margin-top: 30px;
+    background-color: white; /* White background for the table */
 }
 
-table th, table td {
+/* Table headers */
+th {
+    background-color: #f0f0f0; /* Lighter white (dark white) */
+    color: #333;
     padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
+    border: 2px solid #bbb; /* More pronounced border */
 }
 
-table th {
-    background-color: #4CAF50;
-    color: white;
+/* Table cells */
+td {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid #bbb; /* More pronounced border for cells */
 }
 
-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Result Container */
+/* Result section styling */
 #result {
-    margin-top: 20px;
-    width: 80%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
-/* Flexbox Layout for Buttons */
-button + button {
-    margin-left: 10px;
+#result h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#result ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#result li {
+    margin: 10px 0;
+    padding: 12px;
+    background-color: #e3f2f1;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }

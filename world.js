@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Country Lookup Button
+    const countryInput = document.getElementById('country');
+    const resultDiv = document.getElementById('result');
     const lookupButton = document.getElementById('lookup');
+    const lookupCitiesButton = document.getElementById('lookupCities');
+
+    // Country Lookup Button
     lookupButton.addEventListener('click', function() {
-        const countryInput = document.getElementById('country');
-        const resultDiv = document.getElementById('result');
         const countryName = countryInput.value;
+
+        // Clear previous results
+        resultDiv.innerHTML = '';
 
         // Fetch country data
         fetch(`world.php?country=${encodeURIComponent(countryName)}`)
@@ -18,15 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
-    // Lookup Cities Button (added for Exercise 5)
-    const lookupCitiesButton = document.getElementById('lookupCities')
+    // Lookup Cities Button 
     lookupCitiesButton.addEventListener('click', function() {
-        const countryInput = document.getElementById('c');
-        const resultDiv = document.getElementById('result');
         const countryName = countryInput.value;
 
+        // Clear previous results
+        resultDiv.innerHTML = '';
+
         // Fetch city data
-        fetch(`world.php?cities=${encodeURIComponent(countryName)}&lookup=cities`)
+        fetch(`world.php?country=${encodeURIComponent(countryName)}&lookup=cities`)
             .then(response => response.text())
             .then(data => {
                 resultDiv.innerHTML = data;
@@ -36,8 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 resultDiv.innerHTML = 'An error occurred while fetching city data.';
             });
     });
-
-    // Insert the Lookup Cities button after the original lookup button
-    const originalButton = document.getElementById('lookup');
-    originalButton.parentNode.insertBefore(lookupCitiesButton, originalButton.nextSibling);
 });
